@@ -1,0 +1,140 @@
+/* foot new */
+
+
+footer.site-footer {
+    overflow: hidden;
+	width: 100%;
+	margin-top: 2em;
+}
+
+.footer-wrapperFull {
+        background: #252525;
+            max-width: 100%;
+}
+
+.footer-section {
+    display: block;
+    padding: 48px 0;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1128px;
+    transition: max-width 0.4s ease-out;
+
+}
+
+.footer-text-center {
+    text-align: center;
+}
+
+ul.footer-social-list {
+    display: inline-block;
+	line-height: 1;
+	padding-left: 0;
+}
+
+
+ul.footer-social-list > * {
+    display: inline-block;
+    margin: 0 8px;
+	
+}
+
+.footer-social-list a {
+    color: #5d963f;
+    text-decoration: none;
+    transition: all 0.4s ease-out;
+    display: block;
+    transition: opacity 0.4s ease-out;
+}
+
+a svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+	fill: rgb(253, 247, 247);
+	fill-opacity: .3;
+    transition: 400ms;
+  transition-timing-function: ease-in-out;
+  -webkit-transition: 400ms;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+a svg:hover {
+	fill: rgb(253, 247, 247);
+	fill-opacity: 1;
+  
+}
+
+p.footer-text {
+    margin-bottom: 0;
+    color: #ffffff;
+}
+
+p.footer-text {
+    font-size: .9rem;
+    line-height: 1.6;
+    letter-spacing: 0.073em;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    
+}
+
+
+
+.footer-wrapperFull-bottom {
+        position: relative;
+    background-color: #5d963f;
+}
+
+.footer-wrapperFull-bottom {
+    background-size: 224px 76px;
+    height: 76px;
+    margin: 0 auto;
+
+}
+
+p.footer-copy {
+    padding: 24px 0;
+    display: block;
+    font-size: .9em;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    color: #fff
+}
+
+/* footer */
+
+.footer {
+    text-align: center;
+    padding: 2em 0;
+    background-color: #fafafa;
+    clear: both;
+    height: 210px;
+}
+.footer-list a:hover {
+    color: #fff;
+    background-color: #ff3399;
+}
+.footer-list {
+    padding: 0;
+    margin-bottom: 2em;
+}
+.footer-list a {
+    text-align: center;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+}
+.footer-list li {
+    text-transform: lowercase;
+}
+
+
+
+
+
+
+

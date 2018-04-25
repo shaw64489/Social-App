@@ -1,0 +1,51 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+a {
+  color: #00B7FF;
+  cursor: pointer;
+}
+
+a:hover,
+a:active {
+  color: #00B7FF;
+  text-decoration: underline;
+}
+
+a.danger {
+  color: red;
+}
+
+.spacing {
+  margin-bottom: 20px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.container {
+  width: 100%;
+  background-color: #444;
+  color: #fff;
+  padding: 0;
+}
+
+button:focus, input:focus{
+  outline: none;
+}
+
+.container {
+  background: #9053c7;
+  background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+  background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+  background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+ 
+}
+
+ul.nav.nav-pills {
+  float: right;
+}

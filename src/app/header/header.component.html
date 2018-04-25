@@ -1,0 +1,39 @@
+<header class="row">
+    <a class="navbar-brand" href="/">
+
+        <!-- pull application name -->
+        <p class="nav-logo">{{appName}}</p>
+    </a>
+    <nav class="">
+        <ul class="nav nav-pills">
+
+            <!-- hook up links to existing routes
+                 use built in directive - property binding -->
+            <!-- routerLink expects to get array where each element rep 
+                 a segment/path in url -->
+            <!-- conditionally add active class to active link -->
+            <li routerLinkActive="active">
+                <a [routerLink]="['/messege']">Public Posts</a>
+            </li>
+            <li routerLinkActive="active">
+                <a [routerLink]="['/maps']">Map</a>
+            </li>
+            <!-- if user is logged in show -->
+            <li routerLinkActive="active" *ngIf="userLoggedIn()" (click)="toUserProfile()">
+                <a [routerLink]="['/profiles/']">Profile</a>
+            </li>
+            <!-- if user is not logged in show -->
+            <li routerLinkActive="active" *ngIf="!userLoggedIn()">
+                <a [routerLink]="['/signup']">Signup</a>
+            </li>
+            <!-- if user is not logged in show -->
+            <li routerLinkActive="active" *ngIf="!userLoggedIn()">
+                <a [routerLink]="['/signin']">Signin</a>
+            </li>
+            <!-- if user is logged in show -->
+            <li routerLinkActive="active" *ngIf="userLoggedIn()">
+                <a [routerLink]="['/logout']">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</header>

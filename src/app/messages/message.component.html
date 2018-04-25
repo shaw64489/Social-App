@@ -1,0 +1,72 @@
+<!-- message properties passed dynamically from outside -->
+
+<article class="panel panel-default">
+    <div class="panel-body">
+            
+            <!-- set index value id - will be used as anchor when editing to return to
+                message on public post page -->
+            <div id="m{{indexValueFromParent}}"></div>
+
+        <!-- display image from message -->
+        <img class="message-img" src="/images/{{ message.userId }}/{{ message.photo }}" alt="Smiley face">
+
+    </div>
+
+    <!-- display content from message -->
+    <div class="panel-body">
+        {{ message.content }}
+    </div>
+
+    <footer class="panel-footer">
+
+        <!-- display username and date posted from message -->
+        <div class="author">
+            <img class="prof-img img-circle hidden-xs-down" src="/images/robo-logo-black.png" alt="profile img" height="30">
+            <span>Post by: {{ message.username }}</span>
+            <br>
+            <br>
+            <i class="far fa-clock" style="margin: 0 6px 0 7px;font-size: 16px;"></i>
+            <span>Posted on: {{ message.date }}</span>
+        </div>
+
+        <!-- check if these buttons should be shown for the user logged in -->
+        <!-- will show for messages related to the user -->
+        <div class="config" *ngIf="belongsToUser()">
+
+            <!-- listen to click event - execute onEdit method in
+                 MessageComponent class -->
+            <!-- edit only shows in public posts page not profile page -->
+            <a (click)="onEdit()" class="btn btn-outline-submit" *ngIf="!profileParent">Edit</a>
+            <a (click)="onDelete()" class="btn btn-outline-clear">Delete</a>
+        </div>
+
+        <div class="actions">
+            <!-- bind click event to boolean isLiked -->
+            <!-- assign class to element based on condition -->
+            <!-- ****  still in progress - might not complete **** -->
+            <button class="comment-b" type="button" (click)="isLiked = !isLiked" [ngClass]="{liked: isLiked}"><i class="fas fa-star"></i></button>
+
+            <!-- button to show or hide comments -->
+            <button class="comment-b" type="button" (click)="showComments = !showComments"><i class="fas fa-comments"></i> Comments [ {{message.comments.length}} ]</button>
+        </div>
+
+        <!-- ngIf directive if show comments condition is true - show comments -->
+        <div class="comments" *ngIf="showComments">
+
+            <!-- ngFor directive to loop through comments array -->
+            <div class="comment" *ngFor="let comment of message.comments; let index = index;">
+
+                <!-- name of person and comment text -->
+                <p class="m-comment">
+                        <i class="far fa-user"></i><strong> {{comment.name}}: </strong> {{comment.comment}}
+                <hr>
+            </div>
+
+            <!-- to connect message component to the entry form component -->
+            <!-- event emitted from app-entry-comment-form (onCommentAdded) -->
+            <!-- $event - value emitted by the entry form event emitter -->
+            <!-- messageID to know which message to push the comment into -->
+            <app-entry-comment-form (onCommentAdded)="onCommentAdded($event)" [messageId]="message.messageId"></app-entry-comment-form>
+        </div>
+    </footer>
+</article>

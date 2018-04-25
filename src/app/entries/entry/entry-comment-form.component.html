@@ -1,0 +1,42 @@
+<!-- event binding - submit - with handler - onSubmit -->
+<!-- disable form validation - novalidate -->
+<form (submit)="onSubmit()" #commentEntryForm="ngForm" novalidate>
+    <div>
+        <label for="name">Name</label>
+        <hr>
+
+        <!-- local variable to check state on changes -->
+        <!-- ngStyle directive to check on user input - required and min length of 3 -->
+        <input type="text" name="name" [(ngModel)]="name" required minlength="3" #commentName="ngModel" [ngStyle]="{ 'outline-color': commentName.dirty && commentName.valid ? 'green' : undefined }">
+
+        <!-- hide messages from the form until we're ready for them to be shown -->
+        <!-- true only if the field is dirty or has errors -->
+        <div class="alert alert-danger" *ngIf="(commentEntryForm.submitted || commentName.touched) && commentName.errors">
+
+            <!-- hidden - toggles the attr on if the expression is true -->
+            <!-- access to errors on commentName -->
+            <div [hidden]="!commentName.errors.required">Name required</div>
+            <div [hidden]="!commentName.errors.minlength">Minimum of 3 characters required</div>
+        </div>
+    </div>
+    <div>
+
+        <label for="comment">Comment</label>
+        <hr>
+
+        <!-- ngStyle directive to check on user comment - required and min length of 3 -->
+        <textarea name="comment" [(ngModel)]="comment" required minlength="3" #commentText="ngModel" [ngStyle]="{ 'outline-color': commentText.dirty && commentText.valid ? 'green' : undefined }"></textarea>
+        <div class="alert alert-danger" *ngIf="(commentEntryForm.submitted || commentText.touched) && commentText.errors">
+           
+            <!-- hidden - toggles attr on if the expression is true -->
+            <!-- access to errors on commentText -->
+            <div [hidden]="!commentText.errors.required">Comment required</div>
+            <div [hidden]="!commentText.errors.minlength">Minimum of 3 characters required</div>
+        </div>
+    </div>
+    <div>
+        <button class="btn">
+            Submit
+        </button>
+    </div>
+</form>

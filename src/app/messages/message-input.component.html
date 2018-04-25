@@ -1,0 +1,76 @@
+<div class="actions">
+
+    <!-- button to show or hide comments -->
+    <button class="comment-b" type="button" (click)="showPost = !showPost">
+        <i class="fas fa-comments"></i> Post Something &nbsp;
+        <i class="fas fa-angle-down" *ngIf="!showPost" style="font-size: 1.5em; position: relative; top: 4px;"></i>
+        <i class="fas fa-angle-up" *ngIf="showPost" style="font-size: 1.5em; position: relative; top: 4px;"></i>
+    </button>
+
+
+</div>
+
+<div class="col-md-6 col-md-offset-3" *ngIf="showPost" [@fadeInOut]>
+    <h2>Submit Post</h2>
+    <hr id="title-bar">
+    
+    <!-- alert user when location is ready -->
+    <div class="alert alert-primary" role="alert" *ngIf="locationAlert">
+        Location ready!
+    </div>
+
+
+    <!--  ngSubmit - submit form event -->
+    <!--  access to the angular form #inputForm -->
+    <!--  pass local reference form - inputForm - to the onSubmit-->
+    <form (ngSubmit)="onSubmit(inputForm)" #inputForm="ngForm" ngNativeValidate enctype="multipart/form-data" accept="image/x-png,image/gif,image/jpeg">
+
+        
+        <div class="form-group">
+            <label for="content" class="label-p" style="font-size: .7em; display: block; text-align: right; color: red;">
+                You will see alert when location ready
+            </label>
+
+            <!-- get location event button -->
+            <button class="btn btn-outline-clear" type="button" (click)="getLocation()">Get Location</button>
+
+            <!-- hidden values to set date, latitude, longitude -->
+            <input type="hidden" name="date" id="date" [ngModel]="date" />
+            <input type="hidden" name="latitude" id="latitude" [ngModel]="latitude" />
+            <input type="hidden" name="longitude" id="longitude" [ngModel]="longitude" />
+
+            <!-- image update here -->
+            <div class="img-form">
+                <label for="content" class="label-p">Upload Image Here</label>
+
+                <input type="file" name="photo" id="photo" (change)="onFileChanged($event)">
+            </div>
+
+            <!-- preview image -->
+            <div class="img-form">
+                <img [src]="url" id="imgPreview" alt="" height="150">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="content" class="label-p">Message</label>
+
+            <!-- registered as a control/content of the form-->
+            <input type="text" id="content" class="form-control" [ngModel]="message?.content" name="content" required>
+        </div>
+
+        <!-- clear input button - executes onClear method -->
+        <!-- pass form - inputForm -->
+        <button class="btn btn-outline-clear" type="button" (click)="onClear(inputForm)">Clear</button>
+
+        <!-- save message input button -->
+        <!-- upload image -->
+        <!-- handles anchor event too -->
+        <button class="btn btn-outline-submit" type="submit" (click)="upload()" (click)="onAnchorClick()">
+            Save
+        </button>
+    </form>
+
+
+</div>

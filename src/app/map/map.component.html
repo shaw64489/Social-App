@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>Locations of all Posts</h2>
+
+  <!-- set angular google map -->
+  <agm-map id="map" [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+
+    <!-- loop through messages -->
+    <!-- set values to latitude and longitude parameters for markers through message properties -->
+    <agm-marker *ngFor="let message of messages; let i = index" [latitude]="message.latitude" [longitude]="message.longitude">
+
+      <!-- create information windows for the markers - on clicking to open -->
+      <agm-info-window>
+        <br>
+        <img src="/images/{{message.userId}}/{{message.photo}}" alt="{{message.content}}" height="60">
+        <br>
+        <strong>Coordinates</strong>
+        <br>
+        <span>Latitude: {{message.latitude}}</span>
+        <br>
+        <span>Longitude: {{message.longitude}}</span>
+        <br>
+        <strong>Description</strong>
+        <br>
+        <span>{{message.content}}</span>
+        <br>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>

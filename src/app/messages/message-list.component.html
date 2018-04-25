@@ -1,0 +1,11 @@
+<div class="col-md-8 col-md-offset-2">
+
+    <!-- hook up message component -->
+    <!-- pass arg - "message" property in component -->
+    <!-- loop through message and output app-message component as often as needed -->
+    <!-- create new message component per iteration -->
+    <app-message [message]="message" *ngFor="let message of messages; let index = index;" [indexValueFromParent]="index" [profileParent]="profile"></app-message>
+
+    <!-- icon to allow users to scroll to the top of the page on clicking -->
+    <i class="far fa-arrow-alt-circle-up top" (click)="toTop()"></i>
+</div>

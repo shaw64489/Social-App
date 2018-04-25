@@ -1,0 +1,114 @@
+.author {
+    display: inline-block;
+    font-size: 12px;
+    width: 60%;
+    font-weight: 600;
+}
+
+.config {
+    display: inline-block;
+    text-align: right;
+    font-size: 12px;
+    width: 39%;
+}
+.message-img {
+    object-fit: contain;
+    max-width: 60%;
+    display: block;
+    margin: 0 auto;
+    max-height: 25em;
+}
+.panel-default {
+    color: #000;
+}
+.panel {
+    border-radius: 0;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.btn-outline-submit {
+    background-color: transparent;
+    border: solid 1px rgb(115, 172, 115);
+    transition: 0.4s;
+    margin: 0 1.3em 0 0;
+}
+
+.btn-outline-clear {
+    background-color: transparent;
+    border: solid 1px rgb(247, 178, 216);
+    transition: 0.4s;
+}
+
+.btn-outline-submit:hover {
+    background-color: rgb(115, 172, 115);
+    border: solid 1px rgb(115, 172, 115);
+    color: #fff;
+}
+
+.btn-outline-clear:hover {
+    background-color: rgb(247, 178, 216);
+    border: solid 1px rgb(247, 178, 216);
+    color: #fff;
+}
+
+a {
+    color: #000;
+}
+
+.btn {
+    width: 8em;
+}
+figure {
+    margin: 0;
+    border: 1px solid #000;
+    position: relative;
+}
+
+figcaption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1.2em;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+:host {
+    padding: 1em;
+    display: block;
+
+}
+
+.actions {
+    padding: 1em;
+}
+
+.liked {
+    color: red;
+}
+.m-comment{
+    margin: 1.5em;
+}
+
+button.comment-b {
+
+    background-color: transparent;
+    padding: .5em 1.5em;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.panel-footer {
+    background-color: aliceblue;
+}
+.panel-body {
+    text-align: center;
+    
+}

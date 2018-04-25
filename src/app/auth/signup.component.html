@@ -1,0 +1,32 @@
+<div class="col-md-8 signup-component">
+
+    <!-- use form in component - myForm -->
+    <!-- call ngSubmit for submitting form -->
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+        <h4>Please register below</h4>
+        <i class="fas fa-user-circle" style="font-size: 3.2em; display: block; text-align: center;"></i>
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+
+            <!-- define which input belongs to which control in component - formControlName-->
+            <input type="text" id="firstName" class="form-control" formControlName="firstName">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" class="form-control" formControlName="lastName">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" formControlName="password">
+        </div>
+
+        <!-- disable submit button if form isnt valid -->
+        <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">Submit</button>
+        <a class="signup__link" href="/signin">Already registered?</a>
+    </form>
+</div>
